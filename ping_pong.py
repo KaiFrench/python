@@ -5,7 +5,7 @@
 import turtle
 
 wn = turtle.Screen()
-wn.title('Ping_Pong')
+wn.title('Ping Pong')
 wn.bgcolor('green')
 wn.setup(width=800, height=600)
 wn.tracer(0)
@@ -36,7 +36,7 @@ ball.color('yellow')
 ball.penup()
 ball.goto(0, 0)
 ball.dx = 0.1
-ball.dy = 0.1
+ball.dy = -0.1
 
 # Function
 def paddle_a_up():
@@ -73,3 +73,8 @@ while True:
     # move ball
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
+
+    # border checking
+    if ball.ycor > 290:
+        ball.sety(290)
+        ball.dy *= -1
