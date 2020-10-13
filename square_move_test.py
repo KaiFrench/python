@@ -18,6 +18,17 @@ square.shapesize(stretch_wid=3, stretch_len=3)
 square.penup()
 square.goto(0, 0)
 
+# Jumping
+def square_jump():
+    y = square.ycor()
+    for i in range(30):
+        y += 1
+        square.sety(y)
+    
+    for i in range(30):
+        y -= 1
+        square.sety(y)
+
 # main loop
 while True:
     wn.update()
